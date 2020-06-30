@@ -102,5 +102,3 @@ alias c='xclip -selection clipboard'
 alias v='xclip -o'
 
 precmd() { print "" }
-
-fortune | ponysay
