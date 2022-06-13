@@ -68,7 +68,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker docker-compose git pip tmux virtualenv z)
+plugins=(docker docker-compose git pip tmux virtualenv z zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,5 +100,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias c='xclip -selection clipboard'
 alias v='xclip -o'
+alias largefiles='find . -type f -exec wc -l {} + | sort -rn'
 
 precmd() { print "" }
