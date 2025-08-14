@@ -110,4 +110,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
+export EDITOR='nvim'
+export VISUAL='program'
+
 source /home/hschindler/.config/broot/launcher/bash/br
