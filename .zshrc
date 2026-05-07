@@ -105,6 +105,9 @@ precmd() { print "" }
 alias c='xclip -selection clipboard'
 alias v='xclip -o'
 
+# git
+alias gcoi="git checkout \$(git branch -a -vv --sort=-committerdate | fzf --header 'git checkout' | awk '{print \$1}' | sed 's#remotes/origin/##' | xargs)"
+
 # useful utils
 alias largefiles='find . -type f -exec wc -l {} + | sort -rn'
 
