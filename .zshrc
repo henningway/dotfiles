@@ -105,8 +105,31 @@ precmd() { print "" }
 alias c='xclip -selection clipboard'
 alias v='xclip -o'
 
-# git
+# git: interactive checkout
 alias gcoi="git checkout \$(git branch -a -vv --sort=-committerdate | fzf --header 'git checkout' | awk '{print \$1}' | sed 's#remotes/origin/##' | xargs)"
+
+# git: cd to workspace
+wt() {
+  local dir
+  dir=$(git worktree list --porcelain \
+    | awk -v branch="refs/heads/$1" \
+      '/^worktree /{dir=$2} /^branch /{if($2==branch) print dir}')
+  if [ -n "$dir" ]; then
+    cd "$dir" || return
+    echo "Switched to worktree: $dir (branch: $1)"
+  else
+    echo "No worktree found for branch '$1'"
+    return 1
+  fi
+}
+
+wti() {
+  local selected
+  selected=$(git worktree list | fzf --height 40% --reverse)
+  if [ -n "$selected" ]; then
+    cd "$(echo "$selected" | awk '{print $1}')" || return
+  fi
+}
 
 # useful utils
 alias largefiles='find . -type f -exec wc -l {} + | sort -rn'
