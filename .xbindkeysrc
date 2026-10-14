@@ -39,8 +39,8 @@
 
 # Examples of commands:
 
-"~/.scripts/startup.sh"
-  Control+Mod1 + k
+#"~/.scripts/startup.sh"
+#  Control+Mod1 + k
 
 # set directly keycode (here control + f with my keyboard)
 #"xterm"

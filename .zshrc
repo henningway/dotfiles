@@ -134,13 +134,10 @@ wti() {
 # useful utils
 alias largefiles='find . -type f -exec wc -l {} + | sort -rn'
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # nvim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$PATH:/home/hschindler/.dotnet/tools"
+export PATH="$PATH:/home/hschindler/.local/bin:"
 
 # other
 export EDITOR='nvim'
