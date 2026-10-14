@@ -1,2 +1,11 @@
+onboarding = false
+
+[ui]
+status_indicators = "symbols"
+
 [keys]
 prefix = "ctrl+space"
+split_vertical = "prefix+|"
+
+[ui.toast]
+delivery = "herdr"
